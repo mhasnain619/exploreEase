@@ -8,16 +8,16 @@ const Profile = () => {
     };
 
     const func = () => {
-        console.log('function calling inside useEffect');
+        // console.log('function calling inside useEffect');
     };
     const runFunc2 = () => {
-        console.log('function 2 calling');
+        // console.log('function 2 calling');
 
     };
     useEffect(() => {
         runFunc2()
         setTimeout(() => {
-            console.log('updating data.......!');
+            // console.log('updating data.......!');
         }, 2000);
     }, [])
     useEffect(() => {
