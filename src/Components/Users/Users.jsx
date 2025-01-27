@@ -24,9 +24,11 @@ const Users = () => {
             setUserData(res.data);
         });
     };
-
+    if (!userData) {
+        return <div>Loading...</div>;
+    }
     const handleDetail = (id) => {
-        navigate(`users/${id}`);
+        navigate(`/dashboard/users/${id}`);
     };
 
     return (

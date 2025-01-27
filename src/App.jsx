@@ -6,6 +6,7 @@ import Contact from './Components/Contact/Contact';
 import Users from './Components/Users/Users';
 import UserDetails from './Components/Users/UserDetails';
 import ProductsCard from './Components/Products/ProductCard/ProductCards';
+import ProductDetails from './Components/Products/ProductDetails/ProductDetails';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         {/* Routes for porducts */}
 
         <Route path='products' element={<ProductsCard />} />
+        <Route path='products/:id' element={<ProductDetails />} />
 
       </Route>
     </Routes>

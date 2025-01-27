@@ -17,6 +17,7 @@ import Typography from "@mui/material/Typography";
 import { FaHome, FaTachometerAlt } from "react-icons/fa";
 import { MdHomeMini, MdHomeWork } from "react-icons/md";
 import { useNavigate, Outlet } from "react-router-dom";
+import jawan from '../../assets/jaw.jpeg'
 
 const drawerWidth = 180;
 
@@ -39,7 +40,11 @@ function ResponsiveDrawer(props) {
 
     const drawer = (
         <div>
-            <Toolbar />
+            <div style={{ height: '120px', padding: '15px 10px' }}>
+
+                <img height='100%' width='100%' src={jawan} alt="" />
+            </div>
+
             <Divider />
             <List>
                 {pages.map((obj, index) => (

@@ -8,9 +8,12 @@ import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
 import { Data } from '../../../Data';
 import './ProductCard.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom';
 
 const ProductCards = () => {
+    const navigate = useNavigate()
     const handleBuyNow = (id) => {
+        navigate(`/dashboard/products/${id}`)
         console.log(`Buy Now clicked for product with ID: ${id}`);
     };
 
@@ -20,31 +23,33 @@ const ProductCards = () => {
                 Data.map((user, index) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                         <Card className="product-card">
-                            <CardActionArea sx={{ overflow: 'hidden' }}>
+                            <CardActionArea sx={{ objectFit: 'cover' }}>
                                 <CardMedia
                                     component="img"
                                     className="product-card-img"
                                     image={user.image}
-                                    alt={user.username}
+                                    alt={user.title}
                                 />
-                                <CardContent className="card-content">
-                                    <Typography
-                                        gutterBottom
-                                        variant="h6"
-                                        component="div"
-                                        className="product-card-title"
-                                    >
-                                        {user.title}
-                                    </Typography>
-                                    <Typography
-                                        variant="body2"
-                                        className="product-card-category"
-                                    >
-                                        {user.category}
-                                    </Typography>
-                                </CardContent>
+
                             </CardActionArea>
+                            <CardContent className="card-content">
+                                <Typography
+                                    gutterBottom
+                                    variant="h6"
+                                    component="div"
+                                    className="product-card-title"
+                                >
+                                    {user.title}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    className="product-card-category"
+                                >
+                                    {user.category}
+                                </Typography>
+                            </CardContent>
                             <Button
+                                variant="contained"
                                 onClick={() => handleBuyNow(user.id)}
                                 className="product-card-button"
                             >
