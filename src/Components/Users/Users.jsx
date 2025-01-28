@@ -59,7 +59,7 @@ const Users = () => {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button sx={{ width: '100%' }} onClick={() => handleDetail(user.id)} variant='contained' size="medium" color="primary">
+                                <Button sx={{ width: '100%' }} onClick={() => handleDetail(user.id)} variant='contained' size="large" color="primary">
                                     View Details
                                 </Button>
                             </CardActions>

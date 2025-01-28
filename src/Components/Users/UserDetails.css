@@ -13,6 +13,10 @@
     height: 180px !important;
 }
 
+p {
+    margin: 5px;
+}
+
 .card-content {
     margin-top: 16px;
 }
@@ -25,7 +29,7 @@
 .section-detail {
     margin-left: 8px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 8px;
 }
 

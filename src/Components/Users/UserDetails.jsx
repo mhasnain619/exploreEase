@@ -70,44 +70,47 @@ const UserDetails = () => {
                     <Grid container spacing={1}>
                         {/* Company Details */}
                         <Grid item xs={12}>
-                            <Typography variant="subtitle1" className="section-title">
-                                🏢 Company Details:
-                            </Typography>
-                            <Typography variant="body2" className="section-detail">
-                                <BusinessIcon className="section-icon" fontSize="small" />
-                                {userData.company.name}
-                            </Typography>
-                            <Typography variant="subtitle1">{userData.company.catchPhrase}</Typography>
+
+                            <div style={{ textAlign: 'start' }}>
+                                <p style={{ fontSize: '20px', textAlign: 'start' }}>Company Details :</p>
+                                <p >
+                                    <BusinessIcon className="section-icon" fontSize="small" />
+                                    {userData.company.name}
+                                </p>
+                                <p>{userData.company.catchPhrase}</p>
+                            </div>
                         </Grid>
 
                         {/* Contact Information */}
                         <Grid item xs={12}>
-                            <Typography variant="subtitle1" className="section-title">
-                                🌐 Contact Information:
-                            </Typography>
-                            <Typography variant="body2" className="section-detail">
-                                <EmailIcon className="section-icon" fontSize="small" />
-                                {userData.email}
-                            </Typography>
-                            <Typography variant="body2" className="section-detail">
-                                <PhoneIcon className="section-icon" fontSize="small" />
-                                {userData.phone}
-                            </Typography>
-                            <Typography variant="body2" className="section-detail">
-                                <LanguageIcon className="section-icon" fontSize="small" />
-                                {userData.website}
-                            </Typography>
+                            <div style={{ textAlign: 'start' }}>
+                                <p style={{ fontSize: '20px', textAlign: 'start' }}>
+                                    Contact Information :
+                                </p>
+                                <p>
+                                    <EmailIcon className="section-icon" fontSize="small" />
+                                    {userData.email}
+                                </p>
+                                <p>
+                                    <PhoneIcon className="section-icon" fontSize="small" />
+                                    {userData.phone}
+                                </p>
+                                <p>
+                                    <LanguageIcon className="section-icon" fontSize="small" />
+                                    {userData.website}
+                                </p>
+                            </div>
                         </Grid>
 
                         {/* Address */}
                         <Grid item xs={12}>
-                            <Typography variant="subtitle1" className="section-title">
-                                📍 Address:
-                            </Typography>
-                            <Typography variant="body2" className="section-detail">
-                                <LocationOnIcon className="section-icon" fontSize="small" />
-                                {`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}
-                            </Typography>
+                            <div style={{ textAlign: 'start' }}>
+                                <p style={{ fontSize: '20px', textAlign: 'start' }}>Address :</p>
+                                <p>
+                                    {`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}
+                                </p>
+                            </div>
+
                         </Grid>
                     </Grid>
                 </CardContent>

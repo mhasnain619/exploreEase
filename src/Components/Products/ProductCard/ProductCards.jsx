@@ -40,6 +40,7 @@ const ProductCards = () => {
 
                             </CardContent>
                             <Button
+                                size='large'
                                 variant="contained"
                                 onClick={() => handleBuyNow(user.id)}
                                 className="product-card-button"
