@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, CardContent, Typography, Avatar, Button, Grid } from '@mui/material';
+import { Card, CardContent, Typography, Avatar, Button, Grid, Box } from '@mui/material';
 import userImg from '../../assets/userimg.png';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import {
     Business as BusinessIcon,
@@ -31,11 +32,11 @@ const UserDetails = () => {
     }, [id]);
 
     if (!userData) {
-        return <div>Loading...</div>;
+        return <CircularProgress sx={{ fontSize: '500px' }} />
     }
 
     return (
-        <div className="user-details-container">
+        <Box sx={{ py: 7 }} className="user-details-container">
             <Card className="user-card">
                 <Grid container spacing={3}>
                     {/* User Avatar and Basic Info */}
@@ -111,7 +112,7 @@ const UserDetails = () => {
                     </Grid>
                 </CardContent>
             </Card>
-        </div>
+        </Box>
     );
 };
 

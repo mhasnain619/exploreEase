@@ -12,7 +12,7 @@ const CardDetail = () => {
 
     return (
         <>
-            <Box sx={{ my: 5 }}>
+            <Box sx={{ my: 10 }}>
                 <Grid container spacing={4} justifyContent="center">
                     {/* Left Side - Image */}
                     <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -109,7 +109,7 @@ const CardDetail = () => {
                                 </Typography>
                                 <Select
                                     value={1}
-                                    sx={{ width: 100, mr: 3 }}
+                                    sx={{ padding: 'none', width: 100, mr: 3 }}
                                 >
                                     {[1, 2, 3, 4, 5].map((qty) => (
                                         <MenuItem key={qty} value={qty}>
@@ -121,7 +121,7 @@ const CardDetail = () => {
 
                             {/* Add to Cart Button */}
                             <Box sx={{ mt: 2 }}>
-                                <Button variant="contained" sx={{ width: '100%', backgroundColor: '#007BFF', fontWeight: 'bold', '&:hover': { backgroundColor: '#0056b3' } }}>
+                                <Button variant="contained" size='large' sx={{ width: '100%', backgroundColor: '#007BFF', fontWeight: 'bold', '&:hover': { backgroundColor: '#0056b3' } }}>
                                     Add to Cart
                                 </Button>
                             </Box>

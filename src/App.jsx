@@ -7,15 +7,17 @@ import Users from './Components/Users/Users';
 import UserDetails from './Components/Users/UserDetails';
 import ProductsCard from './Components/Products/ProductCard/ProductCards';
 import ProductDetails from './Components/Products/ProductDetails/ProductDetails';
+import "@fontsource/montserrat"; // Defaults to weight 400
+import "@fontsource/montserrat/700.css"; // Specify weight
 
 function App() {
 
   return (
     <Routes>
-      <Route path="/dashboard/*" element={<ResponsiveDrawer />}>
+      <Route path="/*" element={<ResponsiveDrawer />}>
         <Route path="home" element={<Home />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="contact" element={<Contact />} />
+        {/* <Route path="profile" element={<Profile />} />
+        <Route path="contact" element={<Contact />} /> */}
         <Route path="users" element={<Users />} />
         <Route path="users/:id" element={<UserDetails />} />
 

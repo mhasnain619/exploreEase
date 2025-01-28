@@ -14,10 +14,15 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
 import { FaHome, FaTachometerAlt } from "react-icons/fa";
-import { MdHomeMini, MdHomeWork } from "react-icons/md";
 import { useNavigate, Outlet } from "react-router-dom";
-import jawan from '../../assets/jaw.jpeg'
+import jawan from '../../assets/jaw.jpeg';
+import { FaCartShopping } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa";
+import { MdContactPage } from "react-icons/md";
 
 const drawerWidth = 180;
 
@@ -26,12 +31,20 @@ function ResponsiveDrawer(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const navigate = useNavigate();
 
+    // Sample Dashboard Data (Can be fetched from API)
+    const [dashboardData, setDashboardData] = React.useState({
+        totalUsers: 1500,
+        totalProducts: 230,
+        totalOrders: 1200,
+        revenue: "$50,000"
+    });
+
     const pages = [
-        { name: "Home", icon: <FaHome />, route: "/dashboard/home" },
-        { name: "products", icon: <FaHome />, route: "/dashboard/products" },
-        { name: "Profile", icon: <FaTachometerAlt />, route: "/dashboard/profile" },
-        { name: "Contact", icon: <MdHomeMini />, route: "/dashboard/contact" },
-        { name: "Users", icon: <MdHomeWork />, route: "/dashboard/users" },
+        { name: "Home", icon: <FaHome />, route: "/home" },
+        { name: "Users", icon: <FaUser />, route: "/users" },
+        { name: "Products", icon: <FaCartShopping />, route: "/products" },
+        // { name: "Profile", icon: <FaTachometerAlt />, route: "/profile" },
+        // { name: "Contact", icon: <MdContactPage />, route: "/contact" },
     ];
 
     const handleDrawerToggle = () => {
@@ -40,17 +53,15 @@ function ResponsiveDrawer(props) {
 
     const drawer = (
         <div>
-            <div style={{ height: '120px', padding: '15px 10px' }}>
-
+            <div style={{ height: '100px', padding: '5px 20px' }}>
                 <img height='100%' width='100%' src={jawan} alt="" />
             </div>
-
             <Divider />
             <List>
                 {pages.map((obj, index) => (
                     <ListItem key={index} disablePadding>
                         <ListItemButton onClick={() => navigate(obj.route)}>
-                            <ListItemIcon>{obj.icon}</ListItemIcon>
+                            <ListItemIcon sx={{ minWidth: '35px', fontSize: '20px' }}>{obj.icon}</ListItemIcon>
                             <ListItemText primary={obj.name} />
                         </ListItemButton>
                     </ListItem>
@@ -82,14 +93,14 @@ function ResponsiveDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        LMS
+                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Box
                 component="nav"
                 sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-                aria-label="mailbox folders"
+                aria-label="menu items"
             >
                 <Drawer
                     container={container}
@@ -118,13 +129,17 @@ function ResponsiveDrawer(props) {
             <Box
                 component="main"
                 sx={{
+                    // backgroundColor: 'green',
+                    // textAlign: 'start',
                     flexGrow: 1,
                     p: 3,
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                 }}
             >
-                <Toolbar />
-                {/* Render nested routes */}
+                {/* <Toolbar /> */}
+
+                {/* Render nested routes (for dynamic content) */}
+
                 <Outlet />
             </Box>
         </Box>

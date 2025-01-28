@@ -115,6 +115,10 @@ h6 {
     font-size: 14px;
 }
 
+.MuiSelect-select {
+    padding: 10px 15px !important;
+
+}
 
 @media only screen and (max-width: 600px) {
     .cardDetail {
