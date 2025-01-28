@@ -9,6 +9,7 @@ import ProductsCard from './Components/Products/ProductCard/ProductCards';
 import ProductDetails from './Components/Products/ProductDetails/ProductDetails';
 import "@fontsource/montserrat"; // Defaults to weight 400
 import "@fontsource/montserrat/700.css"; // Specify weight
+import GitHubProfileSearch from './Components/GithubUserFinder/UserFinder';
 
 function App() {
 
@@ -25,6 +26,10 @@ function App() {
 
         <Route path='products' element={<ProductsCard />} />
         <Route path='products/:id' element={<ProductDetails />} />
+
+        {/* Routes for Github user finder */}
+
+        <Route path='githubuserfinder' element={<GitHubProfileSearch />} />
 
       </Route>
     </Routes>

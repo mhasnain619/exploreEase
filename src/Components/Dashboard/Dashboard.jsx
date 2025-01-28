@@ -23,6 +23,7 @@ import jawan from '../../assets/jaw.jpeg';
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
+import { FaGithub } from "react-icons/fa6";
 
 const drawerWidth = 180;
 
@@ -43,7 +44,7 @@ function ResponsiveDrawer(props) {
         { name: "Home", icon: <FaHome />, route: "/home" },
         { name: "Users", icon: <FaUser />, route: "/users" },
         { name: "Products", icon: <FaCartShopping />, route: "/products" },
-        // { name: "Profile", icon: <FaTachometerAlt />, route: "/profile" },
+        { name: "Githubuserfinder", icon: <FaGithub />, route: "/githubuserfinder" },
         // { name: "Contact", icon: <MdContactPage />, route: "/contact" },
     ];
 
