@@ -45,7 +45,7 @@ function ResponsiveDrawer(props) {
         { name: "Users", icon: <FaUser />, route: "/users" },
         { name: "Products", icon: <FaCartShopping />, route: "/products" },
         { name: "Githubuserfinder", icon: <FaGithub />, route: "/githubuserfinder" },
-        // { name: "Contact", icon: <MdContactPage />, route: "/contact" },
+        { name: "Contact Us", icon: <MdContactPage />, route: "/contact" },
     ];
 
     const handleDrawerToggle = () => {
