@@ -10,18 +10,18 @@ const GitHubProfileSearch = () => {
     let navigate = useNavigate()
 
     const handleSearch = async () => {
+        if (!username) {
+            alert('Please enter a username')
+        }
         try {
             const res = await axios.get(`https://api.github.com/users/${username}`);
             setProfile(res.data);
-            navigate(`/profile/${username}`)
+            navigate(`/usercard`)
 
         } catch (error) {
             console.error("Error fetching profile:", error);
         }
     };
-    console.log(profile);
-
-
     return (
         <>
             <Box display="flex" justifyContent="center" alignItems="center" height='100vh' >

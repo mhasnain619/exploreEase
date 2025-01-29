@@ -32,7 +32,7 @@ const UserDetails = () => {
     }, [id]);
 
     if (!userData) {
-        return <CircularProgress sx={{ fontSize: '500px' }} />
+        return <CircularProgress sx={{ marginTop: '300px', marginLeft: '300px' }} />
     }
 
     return (
@@ -71,19 +71,19 @@ const UserDetails = () => {
                         {/* Company Details */}
                         <Grid item xs={12}>
 
-                            <div style={{ textAlign: 'start' }}>
+                            <Box style={{ textAlign: 'start' }}>
                                 <p style={{ fontSize: '20px', textAlign: 'start' }}>Company Details :</p>
                                 <p >
                                     <BusinessIcon className="section-icon" fontSize="small" />
                                     {userData.company.name}
                                 </p>
                                 <p>{userData.company.catchPhrase}</p>
-                            </div>
+                            </Box>
                         </Grid>
 
                         {/* Contact Information */}
                         <Grid item xs={12}>
-                            <div style={{ textAlign: 'start' }}>
+                            <Box style={{ textAlign: 'start' }}>
                                 <p style={{ fontSize: '20px', textAlign: 'start' }}>
                                     Contact Information :
                                 </p>
@@ -99,17 +99,17 @@ const UserDetails = () => {
                                     <LanguageIcon className="section-icon" fontSize="small" />
                                     {userData.website}
                                 </p>
-                            </div>
+                            </Box>
                         </Grid>
 
                         {/* Address */}
                         <Grid item xs={12}>
-                            <div style={{ textAlign: 'start' }}>
+                            <Box style={{ textAlign: 'start' }}>
                                 <p style={{ fontSize: '20px', textAlign: 'start' }}>Address :</p>
                                 <p>
                                     {`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}
                                 </p>
-                            </div>
+                            </Box>
 
                         </Grid>
                     </Grid>

@@ -1,13 +1,14 @@
+import { GitHub, Mail, Twitter } from '@mui/icons-material';
 import React from 'react';
+import { BiMapPin } from 'react-icons/bi';
 // import { Card, CardContent, CardHeader } from '@/components/ui/card';
-// import { MapPin, Mail, Twitter, Github } from 'lucide-react';
 
 const ProfileCard = ({ profile }) => {
     if (!profile) return null; // Render nothing if profile is empty
 
     return (
         <div className="max-w-md shadow-lg bg-white">
-            <CardHeader className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
                 <div className="flex items-start gap-4">
                     <div className="h-2 w-2 mt-2 rounded-full bg-orange-500" />
                     <h2 className="text-xl font-semibold">{profile.name}</h2>
@@ -26,7 +27,7 @@ const ProfileCard = ({ profile }) => {
                         </p>
 
                         <div className="flex items-center gap-2 text-gray-600">
-                            <MapPin className="w-4 h-4" />
+                            <BiMapPin className="w-4 h-4" />
                             <span>{profile.location || "Not available"}</span>
                         </div>
 
@@ -36,9 +37,9 @@ const ProfileCard = ({ profile }) => {
                         </div>
                     </div>
                 </div>
-            </CardHeader>
+            </div>
 
-            <CardContent>
+            <div>
                 <div className="space-y-4">
                     <div>
                         <p className="text-gray-600 mb-2">Social Links:</p>
@@ -47,7 +48,7 @@ const ProfileCard = ({ profile }) => {
                                 <Twitter className="w-5 h-5 text-gray-600" />
                             </a>
                             <a href={profile.html_url}>
-                                <Github className="w-5 h-5 text-gray-600" />
+                                <GitHub className="w-5 h-5 text-gray-600" />
                             </a>
                         </div>
                     </div>
@@ -80,7 +81,7 @@ const ProfileCard = ({ profile }) => {
                         </p>
                     </div>
                 </div>
-            </CardContent>
+            </div>
         </div>
     );
 };
