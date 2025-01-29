@@ -1,0 +1,11 @@
+.userFinderBox {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .userFinderBox {
+        display: flex;
+        flex-direction: column;
+    }
+}

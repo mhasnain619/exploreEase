@@ -54,9 +54,10 @@ function ResponsiveDrawer(props) {
 
     const drawer = (
         <div>
-            <div style={{ height: '100px', padding: '5px 20px' }}>
+            <Toolbar />
+            {/* <div style={{ height: '60px', margin: '3px 25px' }}>
                 <img height='100%' width='100%' src={jawan} alt="" />
-            </div>
+            </div> */}
             <Divider />
             <List>
                 {pages.map((obj, index) => (
@@ -93,8 +94,8 @@ function ResponsiveDrawer(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Dashboard
+                    <Typography variant="h5" noWrap component="div">
+                        ExploreEase
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -127,6 +128,9 @@ function ResponsiveDrawer(props) {
                     {drawer}
                 </Drawer>
             </Box>
+            {/* <Box height='120px' width='150px'>
+                <img height='100%' width='100%' src={jawan} alt="" />
+            </Box> */}
             <Box
                 component="main"
                 sx={{
@@ -137,7 +141,35 @@ function ResponsiveDrawer(props) {
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                 }}
             >
-                {/* <Toolbar /> */}
+
+
+                {document.location.pathname === '/' && <Box sx={{ py: 5 }}>
+                    <h3> Welcome to the ExploreEase :</h3>
+                    <p>
+
+                        This is the central hub where you can access
+                        and manage all key aspects of your application.
+                        Navigate through different sections such as Users, Products, Profile, and Contact using the sidebar menu. The dashboard provides a user-friendly interface for quick access to essential data, analytics, and management tools. Get real-time insights and efficiently handle tasks with just a few clicks.
+                    </p>
+                    <h3>Purpose of This Website :</h3>
+                    <p>
+                        The primary purpose of this website is to enhance my skills in React Nested Routing while utilizing Material-UI (MUI) for UI components.
+                        This project serves as a hands-on practice to efficiently structure a dashboard with multiple pages, implementing a responsive sidebar navigation and seamless transitions between different sections. Through this, I am improving my understanding of React Router, component-based development, and UI/UX design with MUI.
+                    </p>
+                    <h3>Website Description: Explore, Manage, and Connect</h3>
+
+                    <p> Welcome to YourHub, a dynamic web platform designed to streamline user management, product discovery, and seamless integration with GitHub. Our three core pages—Users, Products, and GitHub User Finder—empower you to organize data, explore resources, and connect with developers effortlessly.
+                    </p>
+                    <h4> Users Page</h4>
+                    <p>            Manage and interact with user profiles in a clean, intuitive interface. View detailed user information, track activity, and customize access levels. Perfect for teams or communities looking to maintain organized user directories with search, filtering, and sorting capabilities.
+                    </p>
+                    <h4>  Products Page</h4>
+                    <p>            Browse a curated catalog of products with rich descriptions, pricing, and availability. Whether you're showcasing software tools, physical goods, or digital services, this page offers a visually engaging experience. Users can filter by category, price, or popularity, making it easy to find exactly what they need.
+                    </p>
+                    <h3>  GitHub User Finder</h3>
+                    <p>            Integrate with GitHub’s API to search for developers in real time. Enter a username to instantly fetch profiles, repositories, activity stats, and social links. Ideal for recruiters, collaborators, or open-source enthusiasts looking to connect with talented developers.
+                    </p>
+                </Box>}
 
                 {/* Render nested routes (for dynamic content) */}
 

@@ -31,90 +31,95 @@ const UserDetails = () => {
         getData();
     }, [id]);
 
-    if (!userData) {
-        return <CircularProgress sx={{ marginTop: '300px', marginLeft: '300px' }} />
-    }
 
     return (
-        <Box sx={{ py: 7 }} className="user-details-container">
-            <Card className="user-card">
-                <Grid container spacing={3}>
-                    {/* User Avatar and Basic Info */}
-                    <Grid item xs={12} md={3} display="flex" justifyContent="center" alignItems="center">
-                        <Avatar alt={userData.name} src={userImg} className="user-avatar" />
-                    </Grid>
-                    <Grid item xs={12} md={9}>
-                        <Typography variant="h3" fontWeight="bold">
-                            {userData.name}
-                        </Typography>
-                        <Typography variant="h5" color="textSecondary">
-                            {userData.username} | {userData.company.name}
-                        </Typography>
-                        <Grid container spacing={2} marginTop={0}>
-                            <Grid item>
-                                <Button variant="contained" color="primary" size="medium" className="public-profile-btn">
-                                    View Public Profile
-                                </Button>
+        <Box sx={{ py: 8 }}>
+            {userData ?
+                <Card className="user-card">
+                    <Grid container spacing={3}>
+                        {/* User Avatar and Basic Info */}
+                        <Grid item xs={12} md={3} display="flex" justifyContent="center" alignItems="center">
+                            <Avatar alt={userData.name} src={userImg} className="user-avatar" />
+                        </Grid>
+                        <Grid item xs={12} md={9}>
+                            <Typography variant="h3" fontWeight="bold">
+                                {userData.name}
+                            </Typography>
+                            <Typography variant="h5" color="textSecondary">
+                                {userData.username} | {userData.company.name}
+                            </Typography>
+                            <Grid container spacing={2} marginTop={0}>
+                                <Grid item>
+                                    <Button variant="contained" color="primary" size="medium" className="public-profile-btn">
+                                        View Public Profile
+                                    </Button>
+                                </Grid>
+                                <Grid item>
+                                    <Button variant="contained" color="secondary" size="medium" className="send-message-btn">
+                                        Send Message
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid item>
-                                <Button variant="contained" color="secondary" size="medium" className="send-message-btn">
-                                    Send Message
-                                </Button>
+                        </Grid>
+                    </Grid>
+
+                    {/* Additional User Details */}
+                    <CardContent className="card-content">
+                        <Grid container spacing={1}>
+                            {/* Company Details */}
+                            <Grid item xs={12}>
+
+                                <Box style={{ textAlign: 'start' }}>
+                                    <p style={{ fontSize: '20px', textAlign: 'start' }}>Company Details :</p>
+                                    <p >
+                                        <BusinessIcon className="section-icon" fontSize="small" />
+                                        {userData.company.name}
+                                    </p>
+                                    <p>{userData.company.catchPhrase}</p>
+                                </Box>
+                            </Grid>
+
+                            {/* Contact Information */}
+                            <Grid item xs={12}>
+                                <Box style={{ textAlign: 'start' }}>
+                                    <p style={{ fontSize: '20px', textAlign: 'start' }}>
+                                        Contact Information :
+                                    </p>
+                                    <p>
+                                        <EmailIcon className="section-icon" fontSize="small" />
+                                        {userData.email}
+                                    </p>
+                                    <p>
+                                        <PhoneIcon className="section-icon" fontSize="small" />
+                                        {userData.phone}
+                                    </p>
+                                    <p>
+                                        <LanguageIcon className="section-icon" fontSize="small" />
+                                        {userData.website}
+                                    </p>
+                                </Box>
+                            </Grid>
+
+                            {/* Address */}
+                            <Grid item xs={12}>
+                                <Box style={{ textAlign: 'start' }}>
+                                    <p style={{ fontSize: '20px', textAlign: 'start' }}>Address :</p>
+                                    <p>
+                                        {`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}
+                                    </p>
+                                </Box>
+
                             </Grid>
                         </Grid>
-                    </Grid>
-                </Grid>
+                    </CardContent>
+                </Card> : userData == [] ?
+                    <Typography variant="h6">
+                        Data not found...!
+                    </Typography>
+                    :
+                    <CircularProgress />
+            }
 
-                {/* Additional User Details */}
-                <CardContent className="card-content">
-                    <Grid container spacing={1}>
-                        {/* Company Details */}
-                        <Grid item xs={12}>
-
-                            <Box style={{ textAlign: 'start' }}>
-                                <p style={{ fontSize: '20px', textAlign: 'start' }}>Company Details :</p>
-                                <p >
-                                    <BusinessIcon className="section-icon" fontSize="small" />
-                                    {userData.company.name}
-                                </p>
-                                <p>{userData.company.catchPhrase}</p>
-                            </Box>
-                        </Grid>
-
-                        {/* Contact Information */}
-                        <Grid item xs={12}>
-                            <Box style={{ textAlign: 'start' }}>
-                                <p style={{ fontSize: '20px', textAlign: 'start' }}>
-                                    Contact Information :
-                                </p>
-                                <p>
-                                    <EmailIcon className="section-icon" fontSize="small" />
-                                    {userData.email}
-                                </p>
-                                <p>
-                                    <PhoneIcon className="section-icon" fontSize="small" />
-                                    {userData.phone}
-                                </p>
-                                <p>
-                                    <LanguageIcon className="section-icon" fontSize="small" />
-                                    {userData.website}
-                                </p>
-                            </Box>
-                        </Grid>
-
-                        {/* Address */}
-                        <Grid item xs={12}>
-                            <Box style={{ textAlign: 'start' }}>
-                                <p style={{ fontSize: '20px', textAlign: 'start' }}>Address :</p>
-                                <p>
-                                    {`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}
-                                </p>
-                            </Box>
-
-                        </Grid>
-                    </Grid>
-                </CardContent>
-            </Card>
         </Box>
     );
 };

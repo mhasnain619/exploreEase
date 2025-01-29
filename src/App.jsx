@@ -9,7 +9,6 @@ import UserDetails from './Components/Users/UserDetails';
 import ProductsCard from './Components/Products/ProductCard/ProductCards';
 import ProductDetails from './Components/Products/ProductDetails/ProductDetails';
 import GitHubProfileSearch from './Components/GithubUserFinder/UserFinder';
-import UserCard from './Components/GithubUserFinder/UserCard';
 import "@fontsource/montserrat";  // Defaults to weight 400
 import "@fontsource/montserrat/700.css"; // Specify bold weight
 import './index.css';  // Ensure global styles are applied
@@ -34,7 +33,6 @@ function App() {
           <Route path='products' element={<ProductsCard />} />
           <Route path='products/:id' element={<ProductDetails />} />
           <Route path='githubuserfinder' element={<GitHubProfileSearch />} />
-          <Route path='usercard' element={<UserCard />} />
         </Route>
       </Routes>
     </ThemeProvider>

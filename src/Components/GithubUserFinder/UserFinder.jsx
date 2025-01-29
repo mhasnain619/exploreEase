@@ -6,6 +6,7 @@ import { Avatar, IconButton, Divider, Link, Tooltip } from "@mui/material";
 import { LocationOn, Email, GitHub, Twitter } from "@mui/icons-material";
 import CircularProgress from '@mui/material/CircularProgress';
 import Swal from 'sweetalert2'
+import './UserFinder.css'
 const GitHubProfileSearch = () => {
     const [username, setUsername] = useState("");
     const [profile, setProfile] = useState(null);
@@ -26,7 +27,8 @@ const GitHubProfileSearch = () => {
             setLoading(false);
         } catch (error) {
             console.error("Error fetching profile:", error);
-            setProfile(null);
+            // Swal.fire("User not found....!");
+            setProfile('null');
             setLoading(false);
         }
     };
@@ -73,7 +75,7 @@ const GitHubProfileSearch = () => {
             {profile && searchClicked && !loading && (
                 <Card sx={{ maxWidth: 800, borderRadius: 3, boxShadow: 3, padding: 2, }}>
                     <CardContent>
-                        <Box display="flex" alignItems="center">
+                        <Box className='userFinderBox'>
                             <Avatar src={profile.avatar_url} sx={{ width: 120, height: 120, marginRight: 3 }} />
                             <Box>
                                 <Typography variant="h6" fontWeight="bold">

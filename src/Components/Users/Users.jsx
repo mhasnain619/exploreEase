@@ -13,7 +13,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { Box } from '@mui/material';
 
 const Users = () => {
-    const [userData, setUserData] = useState();
+    const [userData, setUserData] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,21 +21,20 @@ const Users = () => {
     }, []);
 
     const getData = async () => {
+        setUserData(null)
         await axios.get('https://jsonplaceholder.typicode.com/users').then((res) => {
             setUserData(res.data);
         });
     };
-    if (!userData) {
-        return <CircularProgress />;
-    }
+
     const handleDetail = (id) => {
         navigate(`/users/${id}`);
     };
 
     return (
-        <Box>
-            <Grid container spacing={2} sx={{ py: 8, justifyContent: 'center' }}>
-                {userData &&
+        <Box sx={{ py: 8 }}>
+            <Grid container spacing={2} sx={{ justifyContent: 'center' }}>
+                {userData ?
                     userData.map((user, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                             <Card sx={{ width: '100%', padding: 1 }}>
@@ -59,7 +58,12 @@ const Users = () => {
                                 </CardActions>
                             </Card>
                         </Grid>
-                    ))}
+                    )) : userData == [] ?
+                        <Typography variant="h6">
+                            Data not found...!
+                        </Typography> :
+                        <CircularProgress sx={{}} />
+                }
             </Grid>
         </Box>
     );
