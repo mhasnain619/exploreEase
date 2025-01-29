@@ -15,20 +15,19 @@ const GitHubProfileSearch = () => {
     const handleSearch = async () => {
         if (!username) {
             alert("Please enter a username");
-            return; // Prevent further execution
+            return;
         }
 
-        setSearchClicked(true);  // Hide the search card
-        setLoading(true);        // Show loading spinner
-
+        setSearchClicked(true);
+        setLoading(true);
         try {
             const res = await axios.get(`https://api.github.com/users/${username}`);
-            setProfile(res.data);  // Set profile data
-            setLoading(false);      // Hide loading spinner
+            setProfile(res.data);
+            setLoading(false);
         } catch (error) {
             console.error("Error fetching profile:", error);
-            setProfile(null);        // Reset profile in case of error
-            setLoading(false);       // Hide loading spinner
+            setProfile(null);
+            setLoading(false);
         }
     };
 
