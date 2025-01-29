@@ -5,7 +5,7 @@ import axios from "axios";
 import { Avatar, IconButton, Divider, Link, Tooltip } from "@mui/material";
 import { LocationOn, Email, GitHub, Twitter } from "@mui/icons-material";
 import CircularProgress from '@mui/material/CircularProgress';
-
+import Swal from 'sweetalert2'
 const GitHubProfileSearch = () => {
     const [username, setUsername] = useState("");
     const [profile, setProfile] = useState(null);
@@ -14,7 +14,7 @@ const GitHubProfileSearch = () => {
 
     const handleSearch = async () => {
         if (!username) {
-            alert("Please enter a username");
+            Swal.fire("Please add a valid username!");
             return;
         }
 
