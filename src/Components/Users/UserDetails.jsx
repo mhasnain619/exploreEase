@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Card, CardContent, Typography, Avatar, Button, Grid, Box } from '@mui/material';
 import userImg from '../../assets/userimg.png';
 import CircularProgress from '@mui/material/CircularProgress';
+import { FaLocationDot } from "react-icons/fa6";
 
 import {
     Business as BusinessIcon,
@@ -42,24 +43,37 @@ const UserDetails = () => {
                             <Avatar alt={userData.name} src={userImg} className="user-avatar" />
                         </Grid>
                         <Grid item xs={12} md={9}>
-                            <Typography variant="h3" fontWeight="bold">
+                            <Typography className='userName'>
                                 {userData.name}
                             </Typography>
-                            <Typography variant="h5" color="textSecondary">
+                            <Typography className='userNameSngCompany'>
                                 {userData.username} | {userData.company.name}
                             </Typography>
-                            <Grid container spacing={2} marginTop={0}>
-                                <Grid item>
-                                    <Button variant="contained" color="primary" size="medium" className="public-profile-btn">
+                            <Grid container spacing={2} marginTop={0} direction={{ xs: "column", sm: "row" }} >
+                                <Grid item xs={12} sm="auto">
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        size="large"
+                                        className="public-profile-btn"
+                                        fullWidth
+                                    >
                                         View Public Profile
                                     </Button>
                                 </Grid>
-                                <Grid item>
-                                    <Button variant="contained" color="secondary" size="medium" className="send-message-btn">
+                                <Grid item xs={12} sm="auto">
+                                    <Button
+                                        variant="contained"
+                                        color="secondary"
+                                        size="large"
+                                        className="send-message-btn"
+                                        fullWidth
+                                    >
                                         Send Message
                                     </Button>
                                 </Grid>
                             </Grid>
+
                         </Grid>
                     </Grid>
 
@@ -67,48 +81,47 @@ const UserDetails = () => {
                     <CardContent className="card-content">
                         <Grid container spacing={1}>
                             {/* Company Details */}
-                            <Grid item xs={12}>
-
+                            <Grid item xs={12} md={4}>
                                 <Box style={{ textAlign: 'start' }}>
-                                    <p style={{ fontSize: '20px', textAlign: 'start' }}>Company Details :</p>
-                                    <p >
+                                    <p className='nameContAddre'>Company Details :</p>
+                                    <span className='iconAndText'>
                                         <BusinessIcon className="section-icon" fontSize="small" />
-                                        {userData.company.name}
-                                    </p>
+                                        <p>  {userData.company.name}</p>
+                                    </span>
                                     <p>{userData.company.catchPhrase}</p>
                                 </Box>
                             </Grid>
 
                             {/* Contact Information */}
-                            <Grid item xs={12}>
+                            <Grid item xs={12} md={4}>
                                 <Box style={{ textAlign: 'start' }}>
-                                    <p style={{ fontSize: '20px', textAlign: 'start' }}>
+                                    <p className='nameContAddre'>
                                         Contact Information :
                                     </p>
-                                    <p>
+                                    <span className='iconAndText'>
                                         <EmailIcon className="section-icon" fontSize="small" />
-                                        {userData.email}
-                                    </p>
-                                    <p>
+                                        <p>  {userData.email}</p>
+                                    </span>
+                                    <span className='iconAndText'>
                                         <PhoneIcon className="section-icon" fontSize="small" />
-                                        {userData.phone}
-                                    </p>
-                                    <p>
+                                        <p>{userData.phone}</p>
+                                    </span>
+                                    <span className='iconAndText'>
                                         <LanguageIcon className="section-icon" fontSize="small" />
-                                        {userData.website}
-                                    </p>
+                                        <p>  {userData.website}</p>
+                                    </span>
                                 </Box>
                             </Grid>
 
                             {/* Address */}
-                            <Grid item xs={12}>
+                            <Grid item xs={12} md={4}>
                                 <Box style={{ textAlign: 'start' }}>
-                                    <p style={{ fontSize: '20px', textAlign: 'start' }}>Address :</p>
-                                    <p>
-                                        {`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}
-                                    </p>
+                                    <p className='nameContAddre'>Address :</p>
+                                    <span className='Address'>
+                                        <FaLocationDot className='locationIcon' />
+                                        <p>{`${userData.address.street}, ${userData.address.suite}, ${userData.address.city}, ${userData.address.zipcode}`}</p>
+                                    </span>
                                 </Box>
-
                             </Grid>
                         </Grid>
                     </CardContent>

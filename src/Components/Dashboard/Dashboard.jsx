@@ -134,6 +134,10 @@ function ResponsiveDrawer(props) {
             <Box
                 component="main"
                 sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    // height: '100vh',
                     // backgroundColor: 'green',
                     // textAlign: 'start',
                     flexGrow: 1,
