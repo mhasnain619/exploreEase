@@ -25,7 +25,7 @@ import { FaUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
 
-const drawerWidth = 180;
+const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
     const { window } = props;

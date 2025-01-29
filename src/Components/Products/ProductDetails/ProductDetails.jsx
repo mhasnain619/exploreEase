@@ -33,7 +33,9 @@ const CardDetail = () => {
                     <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
                         {details.title}
                     </Typography>
-
+                    <Typography variant="body2" sx={{ mt: 1 }}>
+                        Category : {details.category}
+                    </Typography>
                     {/* Rating and Reviews */}
                     <Box sx={{ mt: 1 }}>
                         {[...Array(5)].map((_, i) => (
@@ -48,7 +50,7 @@ const CardDetail = () => {
                     </Box>
 
                     {/* Price */}
-                    <Typography variant="h6" sx={{ mt: 2, color: 'red', fontWeight: 'bold' }}>
+                    <Typography variant="h4" sx={{ mt: 2, color: 'red', fontWeight: 'bold' }}>
                         ${details.price}
                     </Typography>
 
