@@ -73,7 +73,7 @@ const GitHubProfileSearch = () => {
 
             {/* GitHub Profile Card, only shown when profile data is available */}
             {profile && searchClicked && !loading && (
-                <Card sx={{ maxWidth: 800, borderRadius: 2, boxShadow: 3, padding: 2, }}>
+                <Card sx={{ maxWidth: 800, borderRadius: 2, boxShadow: 3, padding: 2, marginTop: '50px' }}>
                     <CardContent>
                         <Box className='userFinderBox'>
                             <Avatar src={profile.avatar_url} sx={{ width: 120, height: 120, marginRight: 3 }} />
