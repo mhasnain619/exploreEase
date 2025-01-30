@@ -14,17 +14,14 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Grid from "@mui/material/Grid";
-import { FaHome, FaTachometerAlt } from "react-icons/fa";
-import { useNavigate, Outlet } from "react-router-dom";
-import jawan from '../../assets/jaw.jpeg';
+import { FaHome } from "react-icons/fa";
+import { useNavigate, Outlet, Link } from "react-router-dom";
+import jawan from '../../assets/jawan.png';
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
-
+import './Dashboard.css'
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
@@ -54,10 +51,12 @@ function ResponsiveDrawer(props) {
 
     const drawer = (
         <div>
-            <Toolbar />
-            {/* <div style={{ height: '60px', margin: '3px 25px' }}>
-                <img height='100%' width='100%' src={jawan} alt="" />
-            </div> */}
+            {/* <Toolbar /> */}
+            <div className="logo">
+                <Link to='/'>
+                    <img className="logoImage" height='100%' width='100%' src={jawan} alt="" />
+                </Link>
+            </div>
             <Divider />
             <List>
                 {pages.map((obj, index) => (
@@ -77,6 +76,7 @@ function ResponsiveDrawer(props) {
     return (
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
+
             <AppBar
                 position="fixed"
                 sx={{
