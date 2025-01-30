@@ -37,7 +37,7 @@ const GitHubProfileSearch = () => {
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" height='100vh' >
             {/* User Search Card, initially visible */}
             {!searchClicked && (
-                <Card sx={{ maxWidth: 600, textAlign: "center", p: 3, borderRadius: "16px", boxShadow: 3 }}>
+                <Card sx={{ maxWidth: 600, textAlign: "center", p: 3, borderRadius: "6px", boxShadow: 3 }}>
                     <CardContent>
                         <Typography variant="h5" fontWeight="bold" gutterBottom>
                             GitHub Profile Search
@@ -73,7 +73,7 @@ const GitHubProfileSearch = () => {
 
             {/* GitHub Profile Card, only shown when profile data is available */}
             {profile && searchClicked && !loading && (
-                <Card sx={{ maxWidth: 800, borderRadius: 3, boxShadow: 3, padding: 2, }}>
+                <Card sx={{ maxWidth: 800, borderRadius: 2, boxShadow: 3, padding: 2, }}>
                     <CardContent>
                         <Box className='userFinderBox'>
                             <Avatar src={profile.avatar_url} sx={{ width: 120, height: 120, marginRight: 3 }} />
