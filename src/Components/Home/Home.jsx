@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <Box sx={{ py: 6 }}>
             <h3>
-                Welcome to <strong>ExploreEase</strong>
+                From <strong>ExploreEase</strong>
             </h3>
 
             <p>
