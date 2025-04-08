@@ -91,10 +91,10 @@ const LoginPage = () => {
                 </Snackbar>
 
                 <Box className='welComeTo'>
-                    <Typography variant="h4" fontWeight='600' sx={{ color: '#FDFDFD' }} gutterBottom>
+                    <Typography variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
                         Welcome Back
                     </Typography>
-                    <Typography variant="h6" fontWeight='400' sx={{ color: '#FDFDFD' }} gutterBottom>
+                    <Typography textAlign='center' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
                         To stay connected with us please login with your personal info
                     </Typography>
                 </Box>
