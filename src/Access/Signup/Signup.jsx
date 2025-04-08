@@ -94,7 +94,7 @@ const SignupPage = () => {
                     </Alert>
                 </Snackbar>
                 <Box className='welComeTo'>
-                    <Typography variant="h4" fontWeight='600' sx={{ color: 'white' }} gutterBottom>
+                    <Typography variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
                         WELCOME TO Jawan Pakistan Learning Management System
                     </Typography>
                 </Box>

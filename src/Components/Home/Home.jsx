@@ -3,7 +3,7 @@ import React from 'react'
 
 const Home = () => {
     return (
-        <Box sx={{ py: 6 }}>
+        <Box sx={{ pt: 8 }}>
             <h3>
                 From <strong>ExploreEase</strong>
             </h3>

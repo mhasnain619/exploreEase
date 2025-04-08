@@ -230,10 +230,9 @@ function ResponsiveDrawer(props) {
             >
 
 
-                {document.location.pathname === '/' && <Box sx={{ pt: 5 }}>
+                {document.location.pathname === '/' && <Box sx={{ pt: 9 }}>
                     <h3> Welcome to the ExploreEase :</h3>
                     <p>
-
                         This is the central hub where you can access
                         and manage all key aspects of your application.
                         Navigate through different sections such as Users, Products, Profile, and Contact using the sidebar menu. The dashboard provides a user-friendly interface for quick access to essential data, analytics, and management tools. Get real-time insights and efficiently handle tasks with just a few clicks.
