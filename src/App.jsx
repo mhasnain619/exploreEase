@@ -15,7 +15,7 @@ import ContactPage from './Components/Contact/Contact';
 import Cart from './Components/Products/Cart/Cart';
 import SignupPage from './Access/Signup/Signup';
 import LoginPage from './Access/Login/Login';
-
+import './App.css'
 // Material UI Theme
 const theme = createTheme({
   typography: {

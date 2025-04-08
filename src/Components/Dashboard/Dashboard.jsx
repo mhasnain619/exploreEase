@@ -28,14 +28,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { useSelector } from 'react-redux';
 import { AuthCredential, getAuth, onAuthStateChanged } from 'firebase/auth';
-const drawerWidth = 200;
+const drawerWidth = 210;
 
 function ResponsiveDrawer(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const navigate = useNavigate();
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+    const currentPath = location.pathname
 
     const pages = [
         { name: "Home", icon: <FaHome />, route: "/home" },
@@ -81,9 +81,9 @@ function ResponsiveDrawer(props) {
                 </Link>
             </div>
             <Divider />
-            <List>
+            <List sx={{ padding: '5px' }}>
                 {pages.map((obj, index) => (
-                    <ListItem key={index} disablePadding>
+                    <ListItem sx={{ background: obj.route === currentPath ? "#e8eefe" : '', borderRadius: '5px' }} key={index} disablePadding>
                         <ListItemButton onClick={() => navigate(obj.route)}>
                             <ListItemIcon sx={{ minWidth: '35px', fontSize: '20px' }}>{obj.icon}</ListItemIcon>
                             <ListItemText primary={obj.name} />
@@ -103,7 +103,7 @@ function ResponsiveDrawer(props) {
             <AppBar
                 position="fixed"
                 sx={{
-                    // backgroundColor: '#E1E1E2',
+                    backgroundColor: '#567ad3',
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
                 }}

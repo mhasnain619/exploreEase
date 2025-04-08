@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 
 import { auth } from "../../FireBaseConfig";
 import { useNavigate } from "react-router-dom";
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
-// import loginImage from '../../assets/signupBgRemove.png';
+import loginImage from '../../assets/login.jpg';
 // import waveImg from '../../assets/wave.png';
 import './Login.css'
 
@@ -91,17 +91,17 @@ const LoginPage = () => {
                 </Snackbar>
 
                 <Box className='welComeTo'>
-                    <Typography variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
+                    <Typography textAlign='start' variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
                         Welcome Back
                     </Typography>
-                    <Typography textAlign='center' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
+                    <Typography textAlign='start' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
                         Welcome back to ExploreEase! Securely access your personalized dashboard with a single click. Log in to manage users,
                         explore products, and connect with GitHub developers—all from
                         one centralized hub. Your seamless experience begins here.
                     </Typography>
                 </Box>
-                <Box sx={{ position: 'relative', height: '250px', width: '350px' }}>
-                    {/* <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" /> */}
+                <Box sx={{ position: 'relative', height: '250px', width: '340px' }}>
+                    <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" />
                     <ArrowCircleDownIcon
                         sx={{ fontSize: '40px' }}
                         className="downArrow"
