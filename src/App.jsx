@@ -12,6 +12,7 @@ import "@fontsource/montserrat";  // Defaults to weight 400
 import "@fontsource/montserrat/700.css"; // Specify bold weight
 import './index.css';  // Ensure global styles are applied
 import ContactPage from './Components/Contact/Contact';
+import Cart from './Components/Products/Cart/Cart';
 
 // Material UI Theme
 const theme = createTheme({
@@ -33,6 +34,7 @@ function App() {
           <Route path='products' element={<ProductsCard />} />
           <Route path='products/:id' element={<ProductDetails />} />
           <Route path='githubuserfinder' element={<GitHubProfileSearch />} />
+          <Route path='cart' element={<Cart />} />
         </Route>
       </Routes>
     </ThemeProvider>

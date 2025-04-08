@@ -26,6 +26,8 @@ import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
+import { useSelector } from 'react-redux';
+
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
@@ -33,13 +35,7 @@ function ResponsiveDrawer(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const navigate = useNavigate();
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    // Sample Dashboard Data (Can be fetched from API)
-    // const [dashboardData, setDashboardData] = React.useState({
-    //     totalUsers: 1500,
-    //     totalProducts: 230,
-    //     totalOrders: 1200,
-    //     revenue: "$50,000"
-    // });
+
 
     const pages = [
         { name: "Home", icon: <FaHome />, route: "/home" },
@@ -58,6 +54,8 @@ function ResponsiveDrawer(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    const { cart } = useSelector((state) => state.cart)
+    console.log(cart);
 
     const drawer = (
         <div>
@@ -109,8 +107,10 @@ function ResponsiveDrawer(props) {
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box>
-                            <Badge badgeContent={4} color="primary">
-                                <ShoppingCartIcon sx={{ color: 'white' }} />
+                            <Badge badgeContent={cart.length} color="primary">
+                                <IconButton onClick={() => navigate('/cart')}>
+                                    <ShoppingCartIcon sx={{ color: 'white' }} />
+                                </IconButton>
                             </Badge>
                         </Box>
                         <Divider orientation="vertical" flexItem sx={{ borderColor: 'white', height: '32px', my: 'auto', mx: '15px' }} />

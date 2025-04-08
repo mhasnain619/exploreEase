@@ -108,7 +108,7 @@ const CardDetail = () => {
                     </Box>
 
                     {/* Add to Cart Button */}
-                    <Box sx={{ mt: 2, display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
+                    {/* <Box sx={{ mt: 2, display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
                         <Button variant="contained" size="large"
                             sx={{
                                 width: { xs: '100%', sm: 'auto' },
@@ -119,7 +119,7 @@ const CardDetail = () => {
                         >
                             Add to Cart
                         </Button>
-                    </Box>
+                    </Box> */}
 
                     {/* Product Description */}
                     <Box sx={{ mt: 3 }}>

@@ -9,12 +9,24 @@ import { Data } from '../../../Data';
 import './ProductCard.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../Store/Slices/AddToCartSlice';
 
 const ProductCards = () => {
     const navigate = useNavigate()
+    const dispacth = useDispatch()
     const handleBuyNow = (id) => {
         navigate(`/products/${id}`)
     };
+    const handleAToCart = (product) => {
+        dispacth(addToCart({
+            id: product.id,
+            name: product.title,
+            price: product.price,
+            image: product.image,
+        }))
+
+    }
 
     return (
         <Grid container sx={{ my: 4 }} spacing={2} className="product-grid">
@@ -39,14 +51,24 @@ const ProductCards = () => {
                                 </Typography>
 
                             </CardContent>
-                            <Button
-                                size='large'
-                                variant="contained"
-                                onClick={() => handleBuyNow(user.id)}
-                                className="product-card-button"
-                            >
-                                View Details
-                            </Button>
+                            <Box sx={{ display: 'flex' }}>
+                                <Button
+                                    size='small'
+                                    variant="contained"
+                                    onClick={() => handleAToCart(user)}
+                                    className="product-card-button"
+                                >
+                                    Addtocart
+                                </Button>
+                                <Button
+                                    size='small'
+                                    variant="contained"
+                                    onClick={() => handleBuyNow(user.id)}
+                                    className="product-card-button"
+                                >
+                                    View Details
+                                </Button>
+                            </Box>
                         </Card>
                     </Grid>
                 ))}
