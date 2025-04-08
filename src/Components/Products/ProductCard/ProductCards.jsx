@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
 import { Data } from '../../../Data';
-import './ProductCard.css'; // Import the CSS file
+import './ProductCard.css';
 import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { useDispatch } from 'react-redux';
@@ -29,7 +29,7 @@ const ProductCards = () => {
     }
 
     return (
-        <Grid container sx={{ my: 4 }} spacing={2} className="product-grid">
+        <Grid container sx={{ mt: 4 }} spacing={2} className="product-grid">
             {Data &&
                 Data.map((user, index) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
@@ -51,17 +51,18 @@ const ProductCards = () => {
                                 </Typography>
 
                             </CardContent>
-                            <Box sx={{ display: 'flex' }}>
+                            <Box sx={{}}>
                                 <Button
-                                    size='small'
+                                    sx={{ mb: 1 }}
+                                    size='large'
                                     variant="contained"
                                     onClick={() => handleAToCart(user)}
                                     className="product-card-button"
                                 >
-                                    Addtocart
+                                    Add to cart
                                 </Button>
                                 <Button
-                                    size='small'
+                                    size='large'
                                     variant="contained"
                                     onClick={() => handleBuyNow(user.id)}
                                     className="product-card-button"

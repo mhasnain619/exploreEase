@@ -106,6 +106,7 @@ function ResponsiveDrawer(props) {
                         ExploreEase
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Divider orientation="vertical" flexItem sx={{ borderColor: 'white', height: '32px', my: 'auto', mx: '15px' }} />
                         <Box>
                             <Badge badgeContent={cart.length} color="primary">
                                 <IconButton onClick={() => navigate('/cart')}>
@@ -204,17 +205,14 @@ function ResponsiveDrawer(props) {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    // height: '100vh',
-                    // backgroundColor: 'green',
-                    // textAlign: 'start',
                     flexGrow: 1,
-                    p: 3,
+                    p: 1,
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                 }}
             >
 
 
-                {document.location.pathname === '/' && <Box sx={{ py: 5 }}>
+                {document.location.pathname === '/' && <Box sx={{ pt: 5 }}>
                     <h3> Welcome to the ExploreEase :</h3>
                     <p>
 
