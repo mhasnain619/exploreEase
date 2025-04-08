@@ -152,13 +152,13 @@ function ResponsiveDrawer(props) {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
-                                <MenuItem onClick={() => { handleCloseUserMenu(); navigate('/profile'); }}>
+                                {/* <MenuItem onClick={() => { handleCloseUserMenu(); navigate('/profile'); }}>
                                     Profile
-                                </MenuItem>
+                                </MenuItem> */}
                                 <MenuItem onClick={() => { handleCloseUserMenu(); navigate('/'); }}>
                                     Dashboard
                                 </MenuItem>
-                                <MenuItem onClick={() => { handleCloseUserMenu(); handleLogout(); }}>
+                                <MenuItem onClick={() => { handleCloseUserMenu(); navigate('/cart'); }}>
                                     Cart
                                 </MenuItem>
                                 <MenuItem onClick={() => { handleCloseUserMenu(); handleLogout(); }}>

@@ -77,7 +77,7 @@ const Cart = () => {
     }
 
     return (
-        <Box sx={{ width: '100%', p: { xs: 2, md: 3 } }}>
+        <Box sx={{ width: '100%', mt: 3, p: { xs: 2, md: 3 } }}>
             <Typography
                 variant="h4"
                 gutterBottom
