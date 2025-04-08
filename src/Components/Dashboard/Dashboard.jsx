@@ -22,20 +22,23 @@ import { FaUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
 import './Dashboard.css'
+import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const navigate = useNavigate();
-
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
     // Sample Dashboard Data (Can be fetched from API)
-    const [dashboardData, setDashboardData] = React.useState({
-        totalUsers: 1500,
-        totalProducts: 230,
-        totalOrders: 1200,
-        revenue: "$50,000"
-    });
+    // const [dashboardData, setDashboardData] = React.useState({
+    //     totalUsers: 1500,
+    //     totalProducts: 230,
+    //     totalOrders: 1200,
+    //     revenue: "$50,000"
+    // });
 
     const pages = [
         { name: "Home", icon: <FaHome />, route: "/home" },
@@ -44,7 +47,13 @@ function ResponsiveDrawer(props) {
         { name: "Githubuserfinder", icon: <FaGithub />, route: "/githubuserfinder" },
         { name: "Contact Us", icon: <MdContactPage />, route: "/contact" },
     ];
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
 
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -84,7 +93,7 @@ function ResponsiveDrawer(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -97,6 +106,54 @@ function ResponsiveDrawer(props) {
                     <Typography variant="h5" noWrap component="div">
                         ExploreEase
                     </Typography>
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Tooltip title="Open settings">
+                            <Box display="flex" alignItems="center" gap={1} onClick={handleOpenUserMenu} sx={{ cursor: 'pointer' }}>
+                                <Avatar
+                                    alt="Helen Walter"
+                                    src="https://randomuser.me/api/portraits/men/1.jpg" // Replace with your image
+                                />
+                                <Box>
+                                    <Typography color="text.secondary" fontWeight={600} fontSize="14px">
+                                        Anaintay
+                                    </Typography>
+                                    <Box display="flex" alignItems="center">
+                                        <Typography color="text.secondary" fontSize="12px">
+                                            Admin
+                                        </Typography>
+                                        <ArrowDropDownIcon fontSize="small" />
+                                    </Box>
+                                </Box>
+                            </Box>
+                        </Tooltip>
+
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            <MenuItem onClick={() => { handleCloseUserMenu(); navigate('/profile'); }}>
+                                Profile
+                            </MenuItem>
+                            <MenuItem onClick={() => { handleCloseUserMenu(); navigate('/'); }}>
+                                Dashboard
+                            </MenuItem>
+                            <MenuItem onClick={() => { handleCloseUserMenu(); handleLogout(); }}>
+                                Logout
+                            </MenuItem>
+                        </Menu>
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Box
@@ -128,9 +185,7 @@ function ResponsiveDrawer(props) {
                     {drawer}
                 </Drawer>
             </Box>
-            {/* <Box height='120px' width='150px'>
-                <img height='100%' width='100%' src={jawan} alt="" />
-            </Box> */}
+
             <Box
                 component="main"
                 sx={{
