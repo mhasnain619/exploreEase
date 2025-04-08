@@ -13,6 +13,8 @@ import "@fontsource/montserrat/700.css"; // Specify bold weight
 import './index.css';  // Ensure global styles are applied
 import ContactPage from './Components/Contact/Contact';
 import Cart from './Components/Products/Cart/Cart';
+import SignupPage from './Access/Signup/Signup';
+import LoginPage from './Access/Login/Login';
 
 // Material UI Theme
 const theme = createTheme({
@@ -25,6 +27,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/*" element={<ResponsiveDrawer />}>
           <Route path="home" element={<Home />} />
           <Route path="profile" element={<Profile />} />

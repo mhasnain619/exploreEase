@@ -27,7 +27,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { useSelector } from 'react-redux';
-
+import { AuthCredential, getAuth, onAuthStateChanged } from 'firebase/auth';
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
@@ -54,6 +54,21 @@ function ResponsiveDrawer(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    const handleLogout = () => {
+        localStorage.removeItem('uid')
+        navigate('/login')
+    }
+    const [user, setUser] = React.useState(null);
+    const [loading, setLoading] = React.useState(true);
+    const auth = getAuth();
+    React.useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false); // Set loading to false once auth state is determined
+        });
+
+        return () => unsubscribe();
+    }, [auth]);
     const { cart } = useSelector((state) => state.cart)
     console.log(cart);
 
@@ -88,6 +103,7 @@ function ResponsiveDrawer(props) {
             <AppBar
                 position="fixed"
                 sx={{
+                    // backgroundColor: '#E1E1E2',
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
                 }}
@@ -117,23 +133,25 @@ function ResponsiveDrawer(props) {
                         <Divider orientation="vertical" flexItem sx={{ borderColor: 'white', height: '32px', my: 'auto', mx: '15px' }} />
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
-                                <Box display="flex" alignItems="center" gap={1} onClick={handleOpenUserMenu} sx={{ cursor: 'pointer' }}>
-                                    <Avatar
-                                        alt="Helen Walter"
-                                        src="https://randomuser.me/api/portraits/men/1.jpg" // Replace with your image
-                                    />
-                                    <Box>
-                                        <Typography color="" fontWeight={600} fontSize="14px">
-                                            Anaintay
-                                        </Typography>
-                                        <Box display="flex" alignItems="center">
-                                            <Typography color="" fontSize="12px">
-                                                Admin
+                                {!loading && (
+                                    <Box display="flex" alignItems="center" gap={1} onClick={handleOpenUserMenu} sx={{ cursor: 'pointer' }}>
+                                        <Avatar
+                                            alt={user ? user.displayName : "Guest"}
+                                            src={user?.photoURL || "https://randomuser.me/api/portraits/men/1.jpg"}
+                                        />
+                                        <Box>
+                                            <Typography color="" fontWeight={600} fontSize="14px">
+                                                {user ? user.displayName : "Guest"}
                                             </Typography>
-                                            <ArrowDropDownIcon fontSize="small" />
+                                            <Box display="flex" alignItems="center">
+                                                <Typography color="" fontSize="12px">
+                                                    {user ? "Admin" : "Guest"}
+                                                </Typography>
+                                                <ArrowDropDownIcon fontSize="small" />
+                                            </Box>
                                         </Box>
                                     </Box>
-                                </Box>
+                                )}
                             </Tooltip>
 
                             <Menu
