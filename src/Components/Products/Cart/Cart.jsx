@@ -15,10 +15,6 @@ import {
     Badge,
     Chip,
     Grid,
-    Card,
-    CardContent,
-    CardMedia,
-    CardActions,
     Slide
 } from '@mui/material';
 import {
@@ -34,6 +30,7 @@ import { useNavigate } from 'react-router-dom';
 const Cart = () => {
     const { cart } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+    const navigate = useNavigate(); // Moved this to the top level
 
     const handleRemoveItem = (id) => {
         dispatch(removeFromCart(id));
@@ -48,7 +45,6 @@ const Cart = () => {
     };
 
     if (cart.length === 0) {
-        const navigate = useNavigate()
         return (
             <Box
                 sx={{
@@ -56,7 +52,6 @@ const Cart = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    // minHeight: '50vh',
                     mt: '50px',
                     textAlign: 'center',
                     p: 4
