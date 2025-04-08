@@ -95,7 +95,9 @@ const LoginPage = () => {
                         Welcome Back
                     </Typography>
                     <Typography textAlign='center' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
-                        To stay connected with us please login with your personal info
+                        Welcome back to ExploreEase! Securely access your personalized dashboard with a single click. Log in to manage users,
+                        explore products, and connect with GitHub developers—all from
+                        one centralized hub. Your seamless experience begins here.
                     </Typography>
                 </Box>
                 <Box sx={{ position: 'relative', height: '250px', width: '350px' }}>

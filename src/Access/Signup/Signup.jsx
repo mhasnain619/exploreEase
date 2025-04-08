@@ -95,7 +95,12 @@ const SignupPage = () => {
                 </Snackbar>
                 <Box className='welComeTo'>
                     <Typography variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
-                        WELCOME TO Jawan Pakistan Learning Management System
+                        WELCOME TO EXPLOREEASE
+                    </Typography>
+                    <Typography textAlign='center' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
+                        Join ExploreEase and unlock powerful tools for user management, product discovery, and developer networking.
+                        Create your account in seconds to gain access to real-time analytics, intuitive controls,
+                        and responsive design—crafted with React and Material-UI for optimal performance.
                     </Typography>
                 </Box>
                 <Box sx={{ height: '250px', width: '350px' }}>
