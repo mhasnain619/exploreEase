@@ -1,8 +1,25 @@
-/* .contactTexts {
-    padding: 90px 0px;
-} */
+.contactTexts {
+    padding-top: 64px;
+}
+
+.imgBox {
+    height: 500px;
+    width: 500px;
+}
+
+
 
 @media (max-width: 768px) {
+    .imgBox {
+        height: auto;
+        width: auto;
+    }
+
+    .cont {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
     .contactTexts {
         padding: 0px;
     }

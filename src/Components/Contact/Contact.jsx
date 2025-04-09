@@ -24,8 +24,8 @@ const ContactPage = () => {
         <Container>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={12} md={6}>
-                    <Container maxWidth="sm" sx={{ pt: 8 }}>
-                        <Box sx={{ mt: 4 }}>
+                    <Container className="cont" sx={{ pt: 8 }}>
+                        <Box >
                             <Typography sx={{ fontSize: 'larger', fontWeight: 'bolder' }} gutterBottom>
                                 Contact us
                             </Typography>
@@ -84,8 +84,8 @@ const ContactPage = () => {
                     </Container>
                 </Grid>
                 <Grid item display='flex' justifyContent='start' alignItems='center' xs={12} md={6}>
-                    <Box sx={{ pt: 8 }} className='contactTexts'>
-                        <Box sx={{ height: '500px', width: '500px' }}>
+                    <Box className='contactTexts'>
+                        <Box className='imgBox'>
                             <img height='100%' width='100%' src={contactImg} alt="" />
                         </Box>
                     </Box>
