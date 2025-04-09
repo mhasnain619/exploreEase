@@ -3,7 +3,7 @@ import { Grid, TextField, Button, Typography, Box, InputAdornment, IconButton, S
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "./Signup.css";
-// import loginImage from '../../assets/signupBgRemove.png';
+import loginImage from '../../assets/signup.png';
 // import waveImg from '../../assets/wave.png';
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -95,7 +95,7 @@ const SignupPage = () => {
                 </Snackbar>
                 <Box className='welComeTo'>
                     <Typography textAlign='start' variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
-                        WELCOME TO EXPLOREEASE
+                        Wellcome to <span style={{ color: "#5379F6", fontWeight: '600' }}>ExploreEase</span>
                     </Typography>
                     <Typography textAlign='start' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
                         Join ExploreEase and unlock powerful tools for user management, product discovery, and developer networking.
@@ -103,8 +103,8 @@ const SignupPage = () => {
                         and responsive design—crafted with React and Material-UI for optimal performance.
                     </Typography>
                 </Box>
-                <Box sx={{ height: '250px', width: '350px' }}>
-                    {/* <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" /> */}
+                <Box sx={{ height: '320px', width: '400px' }}>
+                    <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" />
                 </Box>
             </Grid>
             <Grid item xs={12} md={6} className="rightPanel">

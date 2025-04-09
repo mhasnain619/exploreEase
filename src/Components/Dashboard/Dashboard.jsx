@@ -16,7 +16,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { FaHome } from "react-icons/fa";
 import { useNavigate, Outlet, Link } from "react-router-dom";
-import jawan from '../../assets/jawan.png';
+import jawan from '../../assets/new.png';
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
@@ -119,7 +119,7 @@ function ResponsiveDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h5" noWrap component="div">
-                        ExploreEase
+                        {/* ExploreEase */}
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Divider orientation="vertical" flexItem sx={{ borderColor: 'white', height: '32px', my: 'auto', mx: '15px' }} />
@@ -238,13 +238,37 @@ function ResponsiveDrawer(props) {
                         Navigate through different sections such as Users, Products, Profile, and Contact using the sidebar menu. The dashboard provides a user-friendly interface for quick access to essential data, analytics, and management tools. Get real-time insights and efficiently handle tasks with just a few clicks.
                     </p>
                     <h3>Purpose of This Website :</h3>
-                    <p>
-                        The primary purpose of this website is to enhance my skills in React Nested Routing while utilizing Material-UI (MUI) for UI components.
-                        This project serves as a hands-on practice to efficiently structure a dashboard with multiple pages, implementing a responsive sidebar navigation and seamless transitions between different sections. Through this, I am improving my understanding of React Router, component-based development, and UI/UX design with MUI.
-                    </p>
+                    <span>
+                        <p>The primary purpose of this website is to enhance my skills in React Nested Routing while utilizing Material-UI (MUI) for building modern and responsive UI components. This project serves as a hands-on practice to efficiently structure a dashboard with multiple pages, implement a responsive sidebar navigation, and ensure smooth transitions between different sections.
+                        </p>
+                        <p>  In addition, this project focuses on implementing Protected Routes and Auth Routes to manage user access based on authentication status. By integrating authentication functionality, I am learning how to restrict access to specific pages, handle user login/logout processes, and protect sensitive routes in the application.
+                        </p>
+                        <p> Furthermore, I have used Redux Toolkit for efficient state management — specifically for handling the product cart functionality. This allowed me to manage cart items globally, perform CRUD operations on the cart, and provide a better user experience.
+                        </p>
+                        <h3> Key Learning Areas :</h3>
+                        <ul style={{ marginLeft: '20px' }}>
+                            <li>React Router (Nested Routing & Route Guarding)</li>
+
+                            <li>  Authentication & Authorization in React</li>
+                            <li>Redux Toolkit for State Management (Product Cart)</li>
+
+                            <li>  Component-based development</li>
+
+                            <li>     UI/UX design using Material-UI (MUI)</li>
+
+                            <li>Responsive Layout & Sidebar Navigation</li>
+
+                            <li>State management for user sessions</li>
+                            <li>Real-world Project Structure & Best Practices</li>
+                        </ul>
+
+                        Overall, this project is a complete learning experience to build scalable, secure, and user-friendly dashboard applications in React.
+
+
+                    </span>
                     <h3>Website Description: Explore, Manage, and Connect</h3>
 
-                    <p> Welcome to YourHub, a dynamic web platform designed to streamline user management, product discovery, and seamless integration with GitHub. Our three core pages—Users, Products, and GitHub User Finder—empower you to organize data, explore resources, and connect with developers effortlessly.
+                    <p> Welcome to ExploreEase , a dynamic web platform designed to streamline user management, product discovery, and seamless integration with GitHub. Our three core pages—Users, Products, and GitHub User Finder—empower you to organize data, explore resources, and connect with developers effortlessly.
                     </p>
                     <h4> Users Page</h4>
                     <p>            Manage and interact with user profiles in a clean, intuitive interface. View detailed user information, track activity, and customize access levels. Perfect for teams or communities looking to maintain organized user directories with search, filtering, and sorting capabilities.

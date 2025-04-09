@@ -15,6 +15,8 @@ import ContactPage from './Components/Contact/Contact';
 import Cart from './Components/Products/Cart/Cart';
 import SignupPage from './Access/Signup/Signup';
 import LoginPage from './Access/Login/Login';
+import AuthRoute from './Components/ProtectedRoutes/AuthRoute';
+import ProtectedRoute from './Components/ProtectedRoutes/ProtectedRoute';
 import './App.css'
 // Material UI Theme
 const theme = createTheme({
@@ -27,18 +29,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/*" element={<ResponsiveDrawer />}>
-          <Route path="home" element={<Home />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="users" element={<Users />} />
-          <Route path="users/:id" element={<UserDetails />} />
-          <Route path='products' element={<ProductsCard />} />
-          <Route path='products/:id' element={<ProductDetails />} />
-          <Route path='githubuserfinder' element={<GitHubProfileSearch />} />
-          <Route path='cart' element={<Cart />} />
+        <Route element={<AuthRoute />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Route>
+        <Route element={<ProtectedRoute />}>
+          <Route path="/*" element={<ResponsiveDrawer />}>
+            <Route path="home" element={<Home />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="users" element={<Users />} />
+            <Route path="users/:id" element={<UserDetails />} />
+            <Route path='products' element={<ProductsCard />} />
+            <Route path='products/:id' element={<ProductDetails />} />
+            <Route path='githubuserfinder' element={<GitHubProfileSearch />} />
+            <Route path='cart' element={<Cart />} />
+          </Route>
         </Route>
       </Routes>
     </ThemeProvider>

@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 
 import { auth } from "../../FireBaseConfig";
 import { useNavigate } from "react-router-dom";
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
-import loginImage from '../../assets/login.jpg';
+import loginImage from '../../assets/newLogiin.png';
 // import waveImg from '../../assets/wave.png';
 import './Login.css'
 
@@ -91,16 +91,16 @@ const LoginPage = () => {
                 </Snackbar>
 
                 <Box className='welComeTo'>
-                    <Typography textAlign='start' variant="h4" fontWeight='600' sx={{ color: 'black' }} gutterBottom>
+                    <Typography textAlign='start' variant="h4" fontWeight='600' sx={{ color: '#5379F6' }} gutterBottom>
                         Welcome Back
                     </Typography>
                     <Typography textAlign='start' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
-                        Welcome back to ExploreEase! Securely access your personalized dashboard with a single click. Log in to manage users,
+                        Welcome back to <span style={{ color: "#5379F6", fontWeight: 'bold' }}> ExploreEase!</span> Securely access your personalized dashboard with a single click. Log in to manage users,
                         explore products, and connect with GitHub developers—all from
                         one centralized hub. Your seamless experience begins here.
                     </Typography>
                 </Box>
-                <Box sx={{ position: 'relative', height: '250px', width: '340px' }}>
+                <Box sx={{ position: 'relative', height: '320px', width: '400px' }}>
                     <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" />
                     <ArrowCircleDownIcon
                         sx={{ fontSize: '40px' }}
@@ -116,7 +116,7 @@ const LoginPage = () => {
             <Grid item xs={12} md={6} className="rightPanel">
                 <Box id='loginBox'>
                     <Typography variant="h5" gutterBottom>
-                        LOGIN
+                        Sign In to Your Account
                     </Typography>
 
                     {/* Email Input Field with Error Handling */}
