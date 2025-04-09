@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, TextField, Button, Grid, Typography, Box } from "@mui/material";
 import './ContactUs.css'
+import contactImg from '../../assets/contactt.png'
 const ContactPage = () => {
     const [formData, setFormData] = useState(
         {
@@ -20,10 +21,10 @@ const ContactPage = () => {
     };
 
     return (
-        <>
+        <Container>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={12} md={6}>
-                    <Container maxWidth="sm" sx={{ py: 8 }}>
+                    <Container maxWidth="sm" sx={{ pt: 8 }}>
                         <Box sx={{ mt: 4 }}>
                             <Typography sx={{ fontSize: 'larger', fontWeight: 'bolder' }} gutterBottom>
                                 Contact us
@@ -83,35 +84,38 @@ const ContactPage = () => {
                     </Container>
                 </Grid>
                 <Grid item display='flex' justifyContent='start' alignItems='center' xs={12} md={6}>
-                    <Box className='contactTexts'>
-
-                        <Typography>
-                            We’d love to hear from you! Whether you have a question about our services, need assistance, or just want to share your feedback, we’re here to help.
-                        </Typography>
-                        <Typography>
-                            Our team is dedicated to providing the best support and ensuring a seamless experience for our users. Fill out the contact form with your name, email, and message, and we’ll get back to you as soon as possible.
-                        </Typography>
-                        <Typography>
-                            <strong>Email Support :</strong> Have an inquiry? Reach us via email for a prompt response.
-                        </Typography>
-                        <Typography>
-                            <strong>Phone Support :</strong> Need direct assistance? Contact our support team during business hours.
-                        </Typography>
-                        <Typography>
-                            <strong>Stay Connected :</strong>Follow us on social media for updates, announcements, and more.
-                        </Typography>
-                        <Typography>
-                            Your feedback and queries are important to us, and we aim to respond as quickly as possible. Let’s connect today!
-                            We’d love to hear from you! Whether you have questions,
-                            feedback, or inquiries, feel free to reach out to us.
-                            Simply fill out the form with your name, email, and message, and we'll get back to you as soon as possible. Stay connected—we're here to help!
-                        </Typography>
+                    <Box sx={{ pt: 8 }} className='contactTexts'>
+                        <Box sx={{ height: '500px', width: '500px' }}>
+                            <img height='100%' width='100%' src={contactImg} alt="" />
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
 
-
-        </>
+            <Box>
+                <Typography>
+                    We’d love to hear from you! Whether you have a question about our services, need assistance, or just want to share your feedback, we’re here to help.
+                </Typography>
+                <Typography>
+                    Our team is dedicated to providing the best support and ensuring a seamless experience for our users. Fill out the contact form with your name, email, and message, and we’ll get back to you as soon as possible.
+                </Typography>
+                <Typography>
+                    <strong>Email Support :</strong> Have an inquiry? Reach us via email for a prompt response.
+                </Typography>
+                <Typography>
+                    <strong>Phone Support :</strong> Need direct assistance? Contact our support team during business hours.
+                </Typography>
+                <Typography>
+                    <strong>Stay Connected :</strong>Follow us on social media for updates, announcements, and more.
+                </Typography>
+                <Typography>
+                    Your feedback and queries are important to us, and we aim to respond as quickly as possible. Let’s connect today!
+                    We’d love to hear from you! Whether you have questions,
+                    feedback, or inquiries, feel free to reach out to us.
+                    Simply fill out the form with your name, email, and message, and we'll get back to you as soon as possible. Stay connected—we're here to help!
+                </Typography>
+            </Box>
+        </Container>
     );
 };
 

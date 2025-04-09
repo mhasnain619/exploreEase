@@ -91,8 +91,8 @@ const LoginPage = () => {
                 </Snackbar>
 
                 <Box className='welComeTo'>
-                    <Typography textAlign='start' variant="h4" fontWeight='600' sx={{ color: '#5379F6' }} gutterBottom>
-                        Welcome Back
+                    <Typography textAlign='start' variant="h4" fontWeight='600' gutterBottom>
+                        <span style={{ color: "#5379F6", fontWeight: 'bold' }}> Wellcome!</span>  Back
                     </Typography>
                     <Typography textAlign='start' variant="h6" fontWeight='400' sx={{ color: 'black' }} gutterBottom>
                         Welcome back to <span style={{ color: "#5379F6", fontWeight: 'bold' }}> ExploreEase!</span> Securely access your personalized dashboard with a single click. Log in to manage users,
