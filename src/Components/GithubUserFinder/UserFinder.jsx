@@ -82,8 +82,7 @@ const GitHubProfileSearch = () => {
                                     {profile.name || "No Name Provided"}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    Hi, my name is {profile.name || "User"} and I am a highly ambitious,
-                                    self-motivated frontend developer.
+                                    {profile.bio || "No Bio Provided"}
                                 </Typography>
                                 <Box display="flex" alignItems="center" color="text.secondary">
                                     <LocationOn fontSize="small" /> &nbsp; {profile.location || "Unknown"}
