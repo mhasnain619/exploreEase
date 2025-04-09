@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
     padding: 20px;
     text-align: center;
     background-color: #fff;
@@ -36,15 +35,11 @@
     display: none !important;
 }
 
-/* .loginButton {
-    background-color: #d4ffd4 !important;
-    color: black !important;
-    margin-top: 10px !important;
-}
 
-.loginButton:hover {
-    background-color: #baffba !important;
-} */
+.loginImg {
+    height: 320px;
+    width: 400px;
+}
 
 .clickable {
     cursor: pointer;
@@ -64,7 +59,12 @@
         top: 320px;
     }
 
-    .leftPanel {
-        background-image: url('../../assets/forSmall.png');
+    .rightPanel {
+        padding: 16px;
+    }
+
+    .loginImg {
+        height: auto;
+        width: auto;
     }
 }

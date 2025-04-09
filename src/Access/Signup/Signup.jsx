@@ -71,18 +71,10 @@ const SignupPage = () => {
 
     return (
         <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Grid item xs={12} md={6}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    // backgroundImage: `url(${waveImg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    height: '100vh',
-                    width: '100%',
-                }} className="leftPanel">
+            <Grid item xs={12} md={6} sx={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+                width: '100%',
+            }} className="leftPanel">
                 <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={open} autoHideDuration={3000} onClose={handleClose}>
                     <Alert onClose={handleClose} severity="success" variant="filled" sx={{ width: '100%' }}>
                         Account Created Successfully!
@@ -103,7 +95,7 @@ const SignupPage = () => {
                         and responsive design—crafted with React and Material-UI for optimal performance.
                     </Typography>
                 </Box>
-                <Box sx={{ height: '320px', width: '400px' }}>
+                <Box className='signupImg'>
                     <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" />
                 </Box>
             </Grid>

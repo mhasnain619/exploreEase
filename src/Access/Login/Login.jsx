@@ -79,9 +79,7 @@ const LoginPage = () => {
 
             <Grid item xs={12} md={6} sx={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
-                // backgroundImage: `url(${waveImg})`
                 backgroundSize: 'cover',
-                backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
                 height: '100vh', width: '100%',
             }} className="leftPanel">
                 <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -100,7 +98,7 @@ const LoginPage = () => {
                         one centralized hub. Your seamless experience begins here.
                     </Typography>
                 </Box>
-                <Box sx={{ position: 'relative', height: '320px', width: '400px' }}>
+                <Box className='loginImg' sx={{ position: 'relative' }}>
                     <img height='100%' width='100%' src={loginImage} alt="Learning System" className="image" />
                     <ArrowCircleDownIcon
                         sx={{ fontSize: '40px' }}
