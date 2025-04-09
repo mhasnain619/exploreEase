@@ -59,6 +59,10 @@
         top: 320px;
     }
 
+    .leftPanel {
+        padding: 16px;
+    }
+
     .rightPanel {
         padding: 16px;
     }
