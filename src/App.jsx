@@ -18,7 +18,7 @@ import LoginPage from './Access/Login/Login';
 import AuthRoute from './Components/ProtectedRoutes/AuthRoute';
 import ProtectedRoute from './Components/ProtectedRoutes/ProtectedRoute';
 import './App.css'
-import Calculators from './Components/Calculators/Caalculators';
+import Tabs from './Components/Calculators/Tabs/Tabs';
 // Material UI Theme
 const theme = createTheme({
   typography: {
@@ -37,7 +37,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/*" element={<ResponsiveDrawer />}>
             <Route path="home" element={<Home />} />
-            <Route path="calculators" element={<Calculators />} />
+            <Route path="calculators" element={<Tabs />} />
             <Route path="profile" element={<Profile />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="users" element={<Users />} />
