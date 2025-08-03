@@ -21,6 +21,8 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
+import { FaCalculator } from "react-icons/fa6";
+
 import './Dashboard.css'
 import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -39,6 +41,7 @@ function ResponsiveDrawer(props) {
 
     const pages = [
         { name: "Home", icon: <FaHome />, route: "/home" },
+        { name: "Calculators", icon: <FaCalculator />, route: "/calculators" },
         { name: "Users", icon: <FaUser />, route: "/users" },
         { name: "Products", icon: <FaCartShopping />, route: "/products" },
         { name: "Githubuserfinder", icon: <FaGithub />, route: "/githubuserfinder" },
