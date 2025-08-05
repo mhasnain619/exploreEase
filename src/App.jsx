@@ -15,6 +15,7 @@ import ContactPage from './Components/Contact/Contact';
 import Cart from './Components/Products/Cart/Cart';
 import SignupPage from './Access/Signup/Signup';
 import LoginPage from './Access/Login/Login';
+import Navbar from './Components/Dashboard/Navbar';
 import AuthRoute from './Components/ProtectedRoutes/AuthRoute';
 import ProtectedRoute from './Components/ProtectedRoutes/ProtectedRoute';
 import './App.css'

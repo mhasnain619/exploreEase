@@ -34,12 +34,14 @@ const ToolsPage = () => {
         variant="fullWidth"
         centered
       >
-        <Tab label="Final Exam Calculator" />
-        <Tab label="Average Grade Calculator" />
-        <Tab label="Final Note Calculator" />
-        <Tab label="Final Note Calculator" />
-        <Tab label="Final Note Calculator" />
-        <Tab label="Final Note Calculator" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Final Exam Calculator" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="A Note Letter" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Average Grades" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Weighted Grades" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Final Note" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Projection" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Conversion" />
+        <Tab sx={{fontSize:'10px', fontWeight:"bold", padding:"0px"}} label="Percentages" />
         {/* Add more tabs here */}
       </Tabs>
 
