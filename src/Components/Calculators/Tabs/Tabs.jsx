@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Tabs, Tab, Typography } from '@mui/material';
 import AverageGradeCalculator from '../Tools/FinalExamCalculator';
+import PercentageCalculator from '../Tools/PercentageCalculator';
 
 // Simple TabPanel component for MUI Tabs content display
 function TabPanel(props) {
@@ -51,7 +52,7 @@ const ToolsPage = () => {
 
       <TabPanel value={tabIndex} index={1}>
         {/* Replace this with your Average Grade Calculator component */}
-         <AverageGradeCalculator />
+         <PercentageCalculator />
       </TabPanel>
 
       <TabPanel value={tabIndex} index={2}>
