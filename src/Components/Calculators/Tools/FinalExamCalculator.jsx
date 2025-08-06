@@ -62,7 +62,7 @@ const FinalExamCalculator = () => {
   };
 
   return (
-    <Box sx={{ mt: 4, px: 2, width: '100%' }}>
+    <Box sx={{  px: 2, width: '100%' }}>
       <Grid container spacing={4} justifyContent="center">
         {/* Calculator Section */}
         <Grid item xs={12} md={6}>
